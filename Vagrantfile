@@ -28,11 +28,7 @@ Vagrant.configure('2') do |config|
       apt-get install -y \
           nodejs \
           npm \
-          python3-hglib \
           python3-pip \
-          python3-psutil \
-          python3-pygit2 \
-          python3-vcstools \
           python3-venv \
           socat \
           tree \
@@ -46,7 +42,42 @@ Vagrant.configure('2') do |config|
       set -o nounset
       set -o pipefail
 
-      ln -fvs /vagrant/.config /home/vagrant/.config
+      POWERLINE_HOME="$HOME/.local/opt/python/powerline"
+      LOCAL_BIN="$HOME/.local/bin"
+
+      mkdir -p "$POWERLINE_HOME"
+      mkdir -p "$LOCAL_BIN"
+
+      python3 -m venv "$POWERLINE_HOME"
+      $POWERLINE_HOME/bin/pip install -U --upgrade-strategy eager pip
+      $POWERLINE_HOME/bin/pip install -U --upgrade-strategy eager \
+          powerline-status \
+          psutil \
+          pygit2 \
+          python-hglib \
+          pyuv \
+          vcstools
+
+      ln -svf ../opt/python/powerline/bin/powerline $LOCAL_BIN/powerline
+      ln -svf ../opt/python/powerline/bin/powerline-config $LOCAL_BIN/powerline-config
+      ln -svf ../opt/python/powerline/bin/powerline-daemon $LOCAL_BIN/powerline-daemon
+      ln -svf ../opt/python/powerline/bin/powerline-lint $LOCAL_BIN/powerline-lint
+      ln -svf ../opt/python/powerline/bin/powerline-render $LOCAL_BIN/powerline-render
+      ln -svf ../opt/python/powerline/lib/python3.8/site-packages/powerline/bindings/tmux/powerline.conf $LOCAL_BIN/powerline.conf
+      ln -svfn /vagrant/.config /home/vagrant/.config
+
+      [ -d "$HOME/.homesick/repos/homeshick" ] \
+          || git clone https://github.com/andsens/homeshick.git "$HOME/.homesick/repos/homeshick"
+
+      HOMESHICK_LINE='source "$HOME/.homesick/repos/homeshick/homeshick.sh"'
+      grep -qxF "$HOMESHICK_LINE" "$HOME/.bashrc" \
+          || echo -e "\n$HOMESHICK_LINE\n" >> "$HOME/.bashrc"
+
+      source "$HOME/.homesick/repos/homeshick/homeshick.sh"
+
+      [ -d "$HOME/.homesick/repos/dr-tmux" ] \
+          || homeshick clone -b 'https://github.com/pedrohdz/dr-tmux.git'
+      homeshick symlink -bf dr-tmux
     EOT
 
   #config.vm.provision 'shell',
