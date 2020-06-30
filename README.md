@@ -1,3 +1,3 @@
 # dotfiles-powerline
 
-_**TODO**_
+- [Terminal color cheatsheet](https://jonasjacek.github.io/colors/)

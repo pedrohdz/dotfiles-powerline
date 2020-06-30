@@ -3,14 +3,25 @@
     "right": [
       {
         "function": "powerline.segments.common.sys.uptime",
-        "priority": 50
+        "priority": 60,
+        "args": {
+          "shorten_len": 2
+        }
       },
       {
         "function": "powerline.segments.common.sys.system_load",
         "priority": 50
       },
       {
-        "function": "powerline.segments.common.time.date"
+        "function": "powerline.segments.common.bat.battery",
+        "priority": 40
+      },
+      {
+        "function": "powerline.segments.common.time.date",
+        "name": "date",
+        "args": {
+          "format": "%m-%d"
+        }
       },
       {
         "function": "powerline.segments.common.time.date",
@@ -18,6 +29,12 @@
         "args": {
           "format": "%H:%M",
           "istime": true
+        }
+      },
+      {
+        "function": "powerline.segments.common.env.user",
+        "args": {
+          "hide_domain": true
         }
       },
       {
