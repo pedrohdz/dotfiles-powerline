@@ -1,12 +1,12 @@
 {
   "common": {
     "term_truecolor": false,
-    "default_top_theme": "unicode_terminus"
+    "default_top_theme": "unicode_terminus_phdz"
   },
   "ext": {
     "tmux": {
-      "colorscheme": "default",
-      "theme": "default"
+      "colorscheme": "phdz",
+      "theme": "phdz"
     },
     "vim": {
       "colorscheme": "default",
