@@ -5,16 +5,16 @@
     "user":                 {"fg": "black", "bg": "gray10", "attrs": ["bold"]},
     "hostname":             {"fg": "black", "bg": "gray10", "attrs": ["bold"]},
     "date":                 {"fg": "white", "bg": "gray2", "attrs": [] },
-    "time":                 {"fg": "white", "bg": "gray2", "attrs": ["bold"] },
+    "time":                 {"fg": "white", "bg": "gray2", "attrs": [] },
 
     "activity_status":      {"fg": "yellow",     "bg": "DeepPink4",    "attrs": []},
     "bell_status":          {"fg": "red",        "bg": "DeepPink4",    "attrs": []},
 
     "active_window_status": {"fg": "white",      "bg": "DeepPink4",    "attrs": []},
     "window":               {"fg": "white",      "bg": "DeepPink4",    "attrs": []},
-    "window:current":       {"fg": "white",      "bg": "Purple4", "attrs": []},
+    "window:current":       {"fg": "white",      "bg": "Purple4",      "attrs": []},
     "window:divider":       {"fg": "white",      "bg": "DeepPink4",    "attrs": []},
-    "window_name":          {"fg": "white",      "bg": "Purple4", "attrs": ["bold"]},
+    "window_name":          {"fg": "white",      "bg": "Purple4",      "attrs": []},
     "window_status":        {"fg": "white",      "bg": "DeepPink4",    "attrs": []},
 
     "session":              {"fg": "black",      "bg": "gray90",   "attrs": ["bold"]},
