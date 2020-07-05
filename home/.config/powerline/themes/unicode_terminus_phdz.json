@@ -130,13 +130,24 @@
     },
     "powerline.segments.vim.readonly_indicator": {
       "args": {
-        "text": "RO"
+        "text": "⎔"
       }
     },
     "powerline.segments.vim.modified_indicator": {
       "args": {
-        "text": "+"
+        "text": "Δ"
       }
+    },
+
+    "powerline.segments.vim.file_directory": {
+      "args": {
+        "shorten_user": true,
+        "shorten_cwd": true,
+        "remove_scheme": false
+      }
+    },
+
+    "powerline.segments.vim.plugin.ale.ale": {
     },
 
     "powerline.segments.i3wm.scratchpad": {

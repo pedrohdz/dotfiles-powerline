@@ -6,6 +6,10 @@
         "exclude_modes": ["nc"]
       },
       {
+        "function": "bufnr",
+        "exclude_modes": ["nc"]
+      },
+      {
         "function": "visual_range",
         "include_modes": ["v", "V", "^V", "s", "S", "^S"],
         "priority": 10
@@ -41,6 +45,7 @@
       },
       {
         "function": "file_name",
+        "priority": 0,
         "draw_soft_divider": false
       },
       {
@@ -78,6 +83,10 @@
       }
     ],
     "right": [
+      {
+        "function": "powerline.segments.vim.plugin.ale.ale",
+        "priority": 20
+      },
       {
         "function": "file_format",
         "draw_soft_divider": false,
