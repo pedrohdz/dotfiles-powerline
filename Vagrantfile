@@ -78,6 +78,10 @@ Vagrant.configure('2') do |config|
       [ -d "$HOME/.homesick/repos/dr-tmux" ] \
           || homeshick clone -b 'https://github.com/pedrohdz/dr-tmux.git'
       homeshick symlink -bf dr-tmux
+
+      [ -d "$HOME/.homesick/repos/dotfiles-vim" ] \
+          || homeshick clone -b 'https://github.com/pedrohdz/dotfiles-vim.git'
+      homeshick symlink -bf dotfiles-vim
     EOT
 
   #config.vm.provision 'shell',
